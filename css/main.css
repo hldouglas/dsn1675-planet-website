@@ -39,12 +39,6 @@ nav a{
   text-decoration: none;
 }
 
-.gutter {
-  padding-left: 2.5em;
-  padding-right: 2.5em;
-  padding-top: 1em;
-}
-
 .img-flex {
   width: 100%;
   display: block;
