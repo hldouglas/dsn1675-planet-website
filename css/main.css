@@ -36,6 +36,10 @@ nav ol {
   margin: 0;
 }
 
+a {
+  color: dodgerblue;
+}
+
 nav a{
   text-decoration: none;
   color: dodgerblue;
