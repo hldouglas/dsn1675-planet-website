@@ -10,6 +10,10 @@ header {
   background-color: gainsboro;
 }
 
+.brand-color-2 {
+  background-color: #EEE;
+}
+
 nav ol {
   list-style-type: none;
   padding: 0;
