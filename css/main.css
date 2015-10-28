@@ -26,13 +26,14 @@ header {
   background-color: lightgrey;
 }
 
-h2 {
+.brand-color {
   background-color: gainsboro;
 }
 
 nav ol {
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
 nav a{
