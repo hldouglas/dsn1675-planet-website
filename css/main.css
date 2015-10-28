@@ -26,8 +26,8 @@ header {
   background-color: lightgrey;
 }
 
-h1 {
-  text-align: center;
+h2 {
+  background-color: gainsboro;
 }
 
 nav ol {
@@ -37,6 +37,15 @@ nav ol {
 
 nav a{
   text-decoration: none;
+  color: dodgerblue;
+}
+
+ header nav li:hover {
+  background-color: dodgerblue;
+}
+
+header a:hover {
+  color: white;
 }
 
 .img-flex {
@@ -44,10 +53,18 @@ nav a{
   display: block;
 }
 
+footer {
+  background-color: darkgray;
+}
+
 @media only screen and (min-width: 25em) {
 
-  nav ol {
+  header nav ol {
     text-align: center;
+  }
+
+  footer nav ol {
+    text-align: left;
   }
 
   li {

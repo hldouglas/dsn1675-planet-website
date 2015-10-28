@@ -699,17 +699,3 @@ td, th, fieldset {
 }
 
 }
-
-h1, h2, h3, h4, h5, h6,
-.brand {
-  font-family: helvetica, sans-serif;
-  color: red;
-}
-
-.brand-family {
-  font-family: helvetica, sans-serif;
-}
-
-.brand-color {
-  color: red;
-}
