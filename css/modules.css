@@ -1,7 +1,7 @@
 /*!
  * Modulifier || Code released under the UNLICENSE
  * Code under other copyrights & licenses listed below.
- * http://modulifier.web-dev.tools/#responsive;images;list-group;embed;positioning;accessibility
+ * http://modulifier.web-dev.tools/#responsive;images;list-group;embed;media-object;buttons;forms;accessibility;print
  */
 
 @-moz-viewport { width: device-width; scale: 1; }
@@ -160,106 +160,149 @@ svg {
   width: 100%;
 }
 
-.clearfix::before, .clearfix::after {
-  content: "";
-  display: table;
+.media {
+  overflow: hidden;
 }
 
-.clearfix::after {
-  clear: both;
-}
-
-.left {
+.media__img {
   float: left;
 }
 
-.right {
+.media__img--reversed {
   float: right;
 }
 
-.inline {
-  display: inline;
+.media__img--stacked {
+  float: none;
 }
 
-.block {
+.media__body {
+  overflow: hidden;
+  min-width: 12em; /* Slightly less than 200px, responsiveness built in */
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.375em 0.75em 0.42em;
+  background-color: #333;
+  border-radius: 8px;
+  border: 0;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.btn--light {
+  background-color: #e2e2e2;
+  color: #000;
+}
+
+.btn--light:hover {
+  background-color: #666;
+  color: #fff;
+}
+
+.btn--ghost {
+  background-color: transparent;
+  border: 3px solid #333;
+  color: #000;
+}
+
+.btn--ghost:hover {
+  border-color: #000;
+}
+
+label, .label-block {
   display: block;
+  cursor: pointer;
 }
 
-.inline-block, .ib {
+input[type="checkbox"] + label,
+input[type="radio"] + label,
+.label-inline {
   display: inline-block;
 }
 
-.valign-top {
-  vertical-align: top;
+/*!
+ * (c) Nicolas Gallagher and Jonathan Neal of Normalize.css || MIT License
+ *     https://necolas.github.io/normalize.css/
+ */
+
+button, input, optgroup, select, textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
 }
 
-.valign-bottom {
-  vertical-align: bottom;
+button {
+  overflow: visible;
 }
 
-.valign-middle {
-  vertical-align: middle;
+button,
+select {
+  text-transform: none;
 }
 
-.fixed {
-  position: fixed;
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
 }
 
-.relative {
-  position: relative;
+button[disabled],
+html input[disabled] {
+  cursor: default;
 }
 
-.absolute {
-  position: absolute;
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
 }
 
-.static {
-  position: static;
+input[type="checkbox"],
+input[type="radio"] {
+  padding: 0;
 }
 
-.zindex-1 {
-  z-index: 1;
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
 }
 
-.zindex-2 {
-  z-index: 2;
+input[type="search"] {
+  -webkit-appearance: textfield;
 }
 
-.zindex-3 {
-  z-index: 3;
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 
-.pin-top-left, .pin-tl {
-  top: 0;
-  left: 0;
+fieldset {
+  border: 1px solid;
 }
 
-.pin-top-right, .pin-tr {
-  top: 0;
-  right: 0;
+legend {
+  border: 0;
+  padding: 0;
 }
 
-.pin-bottom-left, .pin-bl {
-  bottom: 0;
-  left: 0;
+textarea {
+  overflow: auto;
 }
 
-.pin-bottom-right, .pin-br {
-  bottom: 0;
-  right: 0;
+optgroup {
+  font-weight: bold;
 }
 
-.width-quarter, .w-1-4 {
-  width: 25%;
-}
-
-.width-half, .w-1-2 {
-  width: 50%;
-}
-
-.width-full, .w-1 {
-  width: 100%;
-}
+/*! End Normalize.css code */
 
 a:hover, a:active {
   outline: none;
@@ -290,4 +333,74 @@ input:focus, textarea:focus, button:focus {
 
 .skip-links a:focus {
   top: 0;
+}
+
+.print-only {
+  display: none;
+  visibility: hidden;
+}
+
+@media print {
+
+  .no-print {
+    display: none;
+    visibility: hidden;
+  }
+
+  .print-only {
+    display: block;
+    visibility: visible;
+  }
+
+  /*!
+   * (c) HTML5 Boilerplate || MIT License
+   *     https://html5boilerplate.com/
+   */
+
+  *, *:before, *:after, *:first-letter, *:first-line {
+    background: none transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a, a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+
+  pre, blockquote {
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr, img {
+    page-break-inside: avoid;
+  }
+
+  p, h1, h2, h3, h4, h5, h6 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+
+  /*! End HTML5 Boilerplate code */
 }
